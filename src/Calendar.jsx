@@ -11,7 +11,7 @@ export default function Calendar(props) {
     const titleAccessor = event => {
         let ret = '';
 
-        ret += event.locked  === 'status-locked'
+        ret += event.status  === 'status-locked'
             ? '🔒 鎖著 Locked'
             : '🔓 沒鎖 Unlocked';
 
