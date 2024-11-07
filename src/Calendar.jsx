@@ -11,26 +11,26 @@ export default function Calendar(props) {
     const titleAccessor = event => {
         let ret = '';
 
-        ret += event.locked
+        ret += event.locked  === 'status-locked'
             ? '🔒 鎖著 Locked'
             : '🔓 沒鎖 Unlocked';
 
-        ret += event.cum
+        ret += event.cummed === 'cummed-yes'
             ? '\n🥛 有射 Cum'
             : '\n😣 沒射 No Cum';
 
         if (event.orgasm_type) {
             switch (event.orgasm_type) {
-                case 'full':
+                case 'orgasm-full':
                     ret += '\n💦 完整高潮 Full';
                     break;
-                case 'ruined':
+                case 'orgasm-ruined':
                     ret += '\n💧 破壞性高潮 Ruined';
                     break;
-                case 'wet-dream':
+                case 'orgasm-wetdream':
                     ret += '\n💭 夢遺 Wet Dream';
                     break;
-                default:
+                case 'orgasm-other':
                     ret += '\n🤔 其它方式 Other';
                     break;
             }
