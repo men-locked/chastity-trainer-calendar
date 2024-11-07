@@ -9,6 +9,10 @@ function App() {
   const { get } = useFetch(import.meta.env.VITE_DAILY_CHECK_API);
 
   useEffect(() => {
+    if (window.location.hash.length === 0) {
+      return;
+    }
+
     get(window.location.hash.substring(1)).then(resp => {
       for (let e of resp) {
         setEvents([
