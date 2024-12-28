@@ -14,7 +14,7 @@ function App() {
     }
 
     get(window.location.hash.substring(1)).then(resp => {
-      for (let e of resp) {
+      for (let e of resp.result) {
         setEvents([
             ...events, { start: e.createdAt, end: e.createdAt, ...e },
         ]);
